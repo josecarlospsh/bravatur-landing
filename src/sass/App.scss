@@ -1,0 +1,234 @@
+@import "./includes/colors";
+@import "./includes/mixins";
+
+.App {
+  color: $color-black;
+}
+
+.App-logo {
+  height: auto;
+  pointer-events: none;
+  // margin-right: auto;
+  width: 200px;
+  @include wider_than(medium){
+  }
+}
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+.App-header {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5em 3em;
+  z-index: 2;
+  font-size: calc(10px + 1vmin);
+  color: $color-gray;
+  flex-direction: column;
+  @include wider_than(medium){
+    flex-direction: row;
+  }
+}
+
+.App-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 1em 0 0 0;
+  padding: 0;
+  color: $color-gray;
+  justify-content: center;
+  @include wider_than(medium){
+    margin: 0 0 0 2em;
+  }
+  li {
+    margin-left: 0;
+    @include wider_than(large){
+      margin-left: 2em;
+    }
+    &:last-child {
+      margin-left: 0;
+    }
+    @include wider_than(large){
+      &:last-child {
+        margin-left: 0;
+        position: absolute;
+        right: 3em;
+        a{
+          color: $color-black;
+          background-color: $color-white;
+          border-radius: 30px;
+        }
+      }
+    }
+    a{
+      text-decoration: none;
+      color: $color-black;
+      padding: 0.8em 1em;
+      font-weight: 500;
+    }
+  }
+}
+
+.App-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include wider_than(medium){
+    flex-direction: row;
+  }
+  .App-title {
+    font-size: 4.5em;
+    padding: 1em 0;
+    margin: 0;
+    font-size: calc(10px + 6.5vmin);
+    line-height: calc(25px + 6.5vmin);
+  }
+  .App-sideleft {
+    margin: 4em 0;
+    padding: 5em 2em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    @include wider_than(medium){
+      padding: 7em 5em 0;
+      height: auto;
+      display: block;
+    }
+  }
+  .App-sideright {
+    position: relative;
+    display: none;
+    @include wider_than(medium){
+      display: block;
+      &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../imgs-grupal.svg) top right no-repeat;
+      }
+    }
+  }
+  .App-sideleft,
+  .App-sideright {
+    width: auto;
+    @include wider_than(large){
+      width: 50%;
+    }
+  }
+}
+
+.App-form{
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 1px 0px 10px 2px transparentize($color-gray, .9);
+  background-color: $color-white;
+  border-radius: 50px;
+  @include wider_than(medium){
+    width: 100%;
+  }
+  &:before, &:after{
+    position: absolute;
+    content: "";
+    background-color: $color-black;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    z-index: -1;
+    @include wider_than(medium){
+      width: 140px;
+      height: 140px;
+    }
+  }
+  &:before{
+    background-color: $color-skyblue;
+    top: 30px;
+    left: -30px;
+    @include wider_than(medium){
+      top: 10px;
+      left: -50px;
+    }
+  }
+  &:after{
+    background-color: $color-black;
+    bottom: 30px;
+    right: -30px;
+    @include wider_than(medium){
+      bottom: 10px;
+      right: -50px;
+    }
+  }
+  input,button{
+    border: 0;
+    outline: none;
+    font-size: 1.2em;
+    font-size: calc(10px + 1.5vmin);
+    background-color: transparent;
+  }
+  input{
+    padding: 1em;
+    width: 100%;
+    border: 1px solid transparent;
+    @include wider_than(medium){
+      padding: 1.2em;
+    }
+  }
+  button{
+    position: absolute;
+    right: 0;
+    padding: 0.5em;
+    background: transparent;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    @include wider_than(medium){
+      width: 100px;
+    }
+    img{
+      max-width: 15px;
+      transition: .2s ease;
+      @include wider_than(medium){
+        max-width: 25px;
+      }
+    }
+    &:hover{
+      img{
+        transform: translateX(5px);
+      }
+    }
+  }
+  ::-webkit-input-placeholder{
+    color: $color-black
+  }
+}
+
+.App-msg{
+  margin-top: 2em;
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

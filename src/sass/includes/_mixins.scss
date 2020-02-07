@@ -1,0 +1,43 @@
+@mixin flex_container($direction,$align-items: true){
+	display: flex;
+	@if $direction == true{
+		flex-direction: column;
+	}
+	@if $align-items == true{
+		align-items: center;
+	}
+}
+@mixin circles_back($bg-color,$width,$height,$top,$right,$bottom,$left,$z-index){
+	position: absolute;
+	content: "";
+	background-color: $bg-color;
+	width: $width;
+	height: $height;
+	border-radius: 100%;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	z-index: $z-index;
+}
+@mixin wider_than($point) {
+  @if $point == small {
+    @media screen and (min-width: 576px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media screen and (min-width: 1150px) {
+      @content;
+    }
+  }
+}
+@mixin button_br($bg-color, $color: inherit, $padding: 10px 30px,$border-radius: 0){
+	background-color: $bg-color;
+	color: $color;
+	padding: $padding;
+	border-radius: $border-radius;
+}
