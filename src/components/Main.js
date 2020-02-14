@@ -7,7 +7,7 @@ class Main extends Component {
     return (
       <main className="App-main">
         <div className="App-sideleft">
-          <h1 className="App-title" dangerouslySetInnerHTML={{__html: this.props.title}}></h1>
+          <div className="App-title" dangerouslySetInnerHTML={{__html: this.props.title}}></div>
           <FormSuscribe />
         </div>
         <div className="App-sideright"></div>

@@ -12,10 +12,10 @@ const menu = [
   { name: "Facebook", url: "https://www.facebook.com/BravaturViajes" },
   { name: "Twitter", url: "https://www.twitter.com/BravaturViajes" },
   { name: "Instagram", url: "https://www.instagram.com/BravaturViajes" },
-  { name: "PROMO", url: "https://www.instagram.com/BravaturViajes" },
   { name: "Whatsapp", url: "https://wa.me/051996898900" }
 ];
-const title = "¡Bienvenidos! <br> Tu próximo viaje <br> comienza aquí";
+//const title = "<h1>¡Bienvenidos!</h1> <br> <h3>Tu próximo viaje <br> comienza aquí</h3>";
+const title = "<h1>¡Bienvenido!</h1> <br> <h3>Inscríbete aquí para el sorteo y más novedades.</h3>";
 
 function App() {
   return (
